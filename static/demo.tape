@@ -1,4 +1,4 @@
-# gh-repo-defaults demo
+# gh-mint demo
 # Run: vhs static/demo.tape
 
 Output static/hero.gif
@@ -13,22 +13,22 @@ Set TypingSpeed 40ms
 Set CursorBlink false
 
 # Show what this thing does
-Type "gh-repo-defaults --help"
+Type "gh-mint --help"
 Enter
 Sleep 2s
 
 # List available profiles
-Type "gh-repo-defaults profiles list"
+Type "gh-mint profiles list"
 Enter
 Sleep 2.5s
 
 # Inspect a profile
-Type "gh-repo-defaults profiles show oss"
+Type "gh-mint profiles show oss"
 Enter
 Sleep 3s
 
 # Show the create command
-Type "gh-repo-defaults create --help"
+Type "gh-mint create --help"
 Enter
 Sleep 2s
 
@@ -36,5 +36,5 @@ Sleep 2s
 Type "# One command. Fully configured repo."
 Enter
 Sleep 500ms
-Type "gh-repo-defaults create my-project --profile oss --public"
+Type "gh-mint create my-project --profile oss --public"
 Sleep 2s
