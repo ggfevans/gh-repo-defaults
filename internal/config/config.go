@@ -26,15 +26,15 @@ type Profile struct {
 }
 
 type RepoSettings struct {
-	HasWiki                  bool   `yaml:"has_wiki"`
-	HasProjects              bool   `yaml:"has_projects"`
-	HasDiscussions           bool   `yaml:"has_discussions"`
-	DeleteBranchOnMerge      bool   `yaml:"delete_branch_on_merge"`
-	AllowSquashMerge         bool   `yaml:"allow_squash_merge"`
-	AllowMergeCommit         bool   `yaml:"allow_merge_commit"`
-	AllowRebaseMerge         bool   `yaml:"allow_rebase_merge"`
-	SquashMergeCommitTitle   string `yaml:"squash_merge_commit_title"`
-	SquashMergeCommitMessage string `yaml:"squash_merge_commit_message"`
+	HasWiki                  bool   `yaml:"has_wiki" json:"has_wiki"`
+	HasProjects              bool   `yaml:"has_projects" json:"has_projects"`
+	HasDiscussions           bool   `yaml:"has_discussions" json:"has_discussions"`
+	DeleteBranchOnMerge      bool   `yaml:"delete_branch_on_merge" json:"delete_branch_on_merge"`
+	AllowSquashMerge         bool   `yaml:"allow_squash_merge" json:"allow_squash_merge"`
+	AllowMergeCommit         bool   `yaml:"allow_merge_commit" json:"allow_merge_commit"`
+	AllowRebaseMerge         bool   `yaml:"allow_rebase_merge" json:"allow_rebase_merge"`
+	SquashMergeCommitTitle   string `yaml:"squash_merge_commit_title" json:"squash_merge_commit_title,omitempty"`
+	SquashMergeCommitMessage string `yaml:"squash_merge_commit_message" json:"squash_merge_commit_message,omitempty"`
 }
 
 type LabelConfig struct {
@@ -49,8 +49,8 @@ type Label struct {
 }
 
 type BoilerplateConfig struct {
-	License   string           `yaml:"license"`
-	Gitignore string           `yaml:"gitignore"`
+	License   string            `yaml:"license"`
+	Gitignore string            `yaml:"gitignore"`
 	Files     []BoilerplateFile `yaml:"files"`
 }
 
@@ -132,7 +132,7 @@ func defaultConfig() *Config {
 						{Name: "wontfix", Color: "ffffff", Description: "This will not be worked on"},
 					},
 				},
-				Boilerplate: BoilerplateConfig{License: "MIT", Gitignore: "Go"},
+				Boilerplate:      BoilerplateConfig{License: "MIT", Gitignore: "Go"},
 				BranchProtection: BranchProtection{Branch: "main", DismissStaleReviews: true},
 			},
 			"action": {
