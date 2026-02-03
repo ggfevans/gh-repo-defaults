@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="static/hero.gif" alt="gh repo-defaults demo" width="720">
+  <img src="static/hero.gif" alt="gh mint demo" width="720">
 </p>
 
-<h1 align="center">gh repo-defaults</h1>
+<h1 align="center">gh mint</h1>
 
 <p align="center">
 A GitHub CLI extension that creates repos and applies settings, labels, boilerplate, and branch protection from named YAML profiles.
@@ -40,7 +40,7 @@ Works as both an interactive TUI and as scriptable CLI subcommands.
 Requires the [GitHub CLI](https://cli.github.com/) (`gh`).
 
 ```bash
-gh extension install ggfevans/gh-repo-defaults
+gh extension install ggfevans/gh-mint
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ gh extension install ggfevans/gh-repo-defaults
 ### Interactive (TUI)
 
 ```bash
-gh repo-defaults
+gh mint
 ```
 
 Launches a terminal UI where you can select a mode, fill out a form, and watch it go.
@@ -56,8 +56,8 @@ Launches a terminal UI where you can select a mode, fill out a form, and watch i
 ### Create a new repo
 
 ```bash
-gh repo-defaults create my-project --profile oss --public
-gh repo-defaults create my-project --profile personal --private --description "A thing"
+gh mint create my-project --profile oss --public
+gh mint create my-project --profile personal --private --description "A thing"
 ```
 
 | Flag | Description |
@@ -70,7 +70,7 @@ gh repo-defaults create my-project --profile personal --private --description "A
 ### Apply a profile to an existing repo
 
 ```bash
-gh repo-defaults apply ggfevans/some-repo --profile oss
+gh mint apply ggfevans/some-repo --profile oss
 ```
 
 Updates settings, syncs labels, and applies branch protection to a repo that already exists.
@@ -78,7 +78,7 @@ Updates settings, syncs labels, and applies branch protection to a repo that alr
 ### List profiles
 
 ```bash
-gh repo-defaults profiles list
+gh mint profiles list
 ```
 
 ```
@@ -91,12 +91,12 @@ action     GitHub Action defaults               3
 ### Show profile details
 
 ```bash
-gh repo-defaults profiles show oss
+gh mint profiles show oss
 ```
 
 ## Configuration
 
-Config lives at `~/.config/gh-repo-defaults/config.yaml`. If the file doesn't exist, built-in defaults are used.
+Config lives at `~/.config/gh-mint/config.yaml`. If the file doesn't exist, built-in defaults are used.
 
 ```yaml
 default_profile: oss
@@ -154,7 +154,7 @@ All three disable wiki and projects, enable delete-branch-on-merge, and include 
 
 ## Templates
 
-Boilerplate files are embedded in the binary. You can override any template by placing a file with the same name in `~/.config/gh-repo-defaults/templates/`.
+Boilerplate files are embedded in the binary. You can override any template by placing a file with the same name in `~/.config/gh-mint/templates/`.
 
 **Included templates:**
 
